@@ -2,7 +2,16 @@
 
 ## Group vars
 
-Here I set up packages to be installed, in my case just macbookpro, but you can make different grups here for different packages configurations. Then in host files you can select the group for localhost
+Here I set up packages to be installed, in my case just macbookpro, but you can make different groups here for different packages configurations.
+
+Then in host files you can select the group for localhost. For example, you can make a macbookpro and an imac file with different packages.
+
+- example `hosts`:
+
+```
+[macbookpro]
+localhost
+```
 
 - example `group_vars/macbookpro`:
 
@@ -34,8 +43,7 @@ homebrew_cask_packages:
   - vlc
   - java
   - the-unarchiver
-
-``
+```
 
 ## Usage
 

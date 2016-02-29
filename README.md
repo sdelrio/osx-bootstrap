@@ -47,8 +47,11 @@ homebrew_cask_packages:
 
 ## Usage
 
+The `osx-bootstrap.sh` will check for requiremens and execute `ansible-playbook main.yml`. You can even use to upgrade packages, is idempotent.
+
 ```bash
-ansible-playbook main.yml
+
+$ ./osx-bootstrap.sh
 
 
 PLAY ***************************************************************************

@@ -1,0 +1,27 @@
+---
+homebrew_packages:
+  - name: brew-cask
+  - name: nmap
+  - name: vim
+    install_options: with-lua
+  - name: lua
+  - name: ctags
+  - name: pandoc
+  - name: wget
+    install_options: enable-iri
+  - name: ssh-copy-id
+  - name: xhyve
+  - name: node
+  - name: sbt
+
+homebrew_cask_packages:
+  - vagrant
+  - vlc
+  - skype
+#  - iterm2
+#  - the-unarchiver
+#  - dropbox
+#  - evernote
+#  - google-chrome
+#  - virtualbox
+#  - java

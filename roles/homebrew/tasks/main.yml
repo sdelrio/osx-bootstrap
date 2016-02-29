@@ -1,0 +1,20 @@
+---
+
+- name: make sure brew tap items present
+  homebrew_tap:
+    tap: "{{item}}"
+    state: present
+  with_items:
+    - '{{ homebrew_taps }}'
+
+- name: Update and Upgrade all
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
+- name: Install packages
+  homebrew:
+    name: "{{ item.name }}"
+    state: latest
+    install_options: "{{ item.install_options|default() }}"
+  with_items: "{{ homebrew_packages }}"

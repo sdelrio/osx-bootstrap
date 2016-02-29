@@ -1,0 +1,11 @@
+---
+homebrew_cask_packages:
+  - dropbox
+  - google-chrome
+  - iterm2
+  - virtualbox
+  - vagrant
+  - skype
+  - vlc
+  - java
+  - the-unarchiver

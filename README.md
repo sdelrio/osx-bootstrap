@@ -10,6 +10,8 @@ Script and ansible playbook to set up my my brew packets and bashrc, it's design
 
 - `homebrew_packages`: List of homebrew packages to install. Make sure you include `brew-cask`.
 - `homebrew_cask_packages`: List of homebrew cask packages to install.
+- `homebrew_update`: Default true, execute brew update.
+- `homebrew_upgrade`: Default true, execute brew upgrade.
 
 ## Group vars
 
@@ -61,6 +63,15 @@ homebrew_cask_packages:
 The `osx-bootstrap.sh` will check for requirements and execute `ansible-playbook main.yml`. You can use to upgrade packages, since the rest of the configuration wont be changed (except upgrades, the rest is idempotent).
 
 Homebrew cask options points appdir to `/Applications`, that way you will see links on Applications inside Finder.
+
+you can use `noupdate` or `noupgrade`as parameter for `osx-bootstrap.sh`:
+
+- `./osx-bootstrap.sh noupdate`: Brew update and brew upgrade won't be executed.
+- `./osx-bootstrap.sh noupgrade`: Brew upgrade won't be executed, but brew update will.
+
+Examples:
+
+- Execute playbook without parameters: If nothing changes all but the update/upgrade will be idempotent. So you can use to upgrade your packages, or to install new if you modifiy the brew_packages lists.
 
 ```bash
 

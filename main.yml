@@ -3,6 +3,9 @@
   connection: local
   gather_facts: no
   become: no
+  tasks:
+    - debug: var=homebrew_update
+    - debug: var=homebrew_upgrade
   roles:
     - role: homebrew
       tags: brew

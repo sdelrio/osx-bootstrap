@@ -6,3 +6,6 @@ homebrew_packages:
       install_options: with-lua }
   - { name: wget,
       install_options: enable-iri }
+
+homebrew_update: true
+homebrew_upgrade: true

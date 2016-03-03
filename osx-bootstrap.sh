@@ -35,5 +35,16 @@ fi
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Execute playbook
-ansible-playbook main.yml --become
 
+case "$1" in
+  noupdate)
+    EXTRA_PARAM="homebrew_upgrade=false homebrew_update=false";;
+  noupgrade)
+    EXTRA_PARAM="homebrew_upgrade=false" ;;
+esac
+
+if [ "$EXTRA_PARAM" ]; then
+  ansible-playbook main.yml --become --extra-vars "$EXTRA_PARAM"
+else
+  ansible-playbook main.yml --become
+fi

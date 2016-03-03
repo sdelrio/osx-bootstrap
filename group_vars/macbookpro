@@ -9,17 +9,21 @@ homebrew_packages:
   - name: pandoc
   - name: wget
     install_options: enable-iri
+  - name: ncdu
   - name: ssh-copy-id
   - name: xhyve
   - name: node
+  - name: go
   - name: sbt
+  - name: awscli
+  - name: openvpn
 
 homebrew_cask_packages:
   - vagrant
   - vlc
   - skype
-#  - iterm2
-#  - the-unarchiver
+  - the-unarchiver
+  - iterm2
 #  - dropbox
 #  - evernote
 #  - google-chrome

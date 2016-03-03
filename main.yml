@@ -4,5 +4,11 @@
   gather_facts: no
   become: no
   roles:
-    - homebrew
-    - homebrew-cask
+    - role: homebrew
+      tags: brew
+    - role: homebrew-cask
+      tags: brew
+    - name: bashrc
+      tags: bash
+    - name: spf13-vim
+      tags: spf13

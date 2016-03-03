@@ -1,0 +1,29 @@
+" === TAB SETTINGS ===
+set tabstop={{ spf13_vim_tabstop }}
+set shiftwidth={{ spf13_vim_shiftwidth }}
+set expandtab
+
+" == OsX MacVim
+if has("gui_macvim")
+    set background=light
+    set guifont={{ spf13_vim_colorscheme }}:h{{ spf13_vim_fontsize }}
+endif
+
+colorscheme {{ spf13_vim_colorscheme }}
+set background={{ spf13_vim_background }}
+
+" === ENCODING AND FILETYPES ===
+set encoding={{ spf13_vim_encoding }}
+filetype plugin on
+
+"
+" To remove error with undefined variable: b:color_pattern when using spf13 with python
+"
+
+let $PYTHONHOME='/System/Library/Frameworks/Python.framework/Versions/Current'
+
+" auto-pairs gives some conflics with autocompletion
+"UnBundle 'jiangmiao/auto-pairs'
+
+map <F2> :NERDTreeToggle<CR>
+

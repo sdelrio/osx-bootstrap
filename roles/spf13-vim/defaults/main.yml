@@ -1,0 +1,13 @@
+---
+spf13_install_sript: /tmp/spf13-vim.sh
+
+spf13_vim_tabstop: 4
+spf13_vim_shiftwidth: 4
+
+spf13_vim_guifont: Menlo
+#spf13_vim_guifont: Source\ Code\ Pro
+#spf13_vim_guifont: Monaco
+spf13_vim_fontsize: 12
+spf13_vim_colorscheme: lucius
+spf13_vim_background: light
+spf13_vim_encoding: utf-8

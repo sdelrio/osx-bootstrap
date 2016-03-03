@@ -1,0 +1,55 @@
+
+export PS1="\[\033[36m\]\t\[\033[m\]\[\033[32m\]:\[\033[34;1m\]\w\[\033[m\]\n\$ "
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export PROMPT_PREPOSITION_COLOR="$sexy_bash_prompt_bold$(tput setaf 1)"
+# Specify your defaults app dir for homebrew cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+
+{% if bashrc_tokenfile %}
+if [ -f {{ bashrc_tokenfile }} ]; then
+  . {{ bashrc_tokenfile }}
+fi
+{% endif %}
+
+alias ls='ls -GFh'
+alias vi='vim'
+alias myip='curl http://checkip.dyndns.org 2>/dev/null| cut -f 2 -d':' | cut -f 1 -d"<" '
+alias nosleep='pmset noidle'
+
+{% if bashrc_java_environment %}
+# Default Java environment
+
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+
+# To change Java environment to another version, sometimes you need to be switching 1.7.
+
+setjdk() {
+    export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+}
+{% endif %}
+
+{% if bashrc_sexy_bash_prompt %}
+# Run twolfson/sexy-bash-prompt
+
+. ~/.bash_prompt
+
+PS1="\[$sexy_bash_prompt_user_color\]\u\[$sexy_bash_prompt_reset\]\
+\[$sexy_bash_prompt_preposition_color\]@\[$sexy_bash_prompt_reset\]\
+\[$sexy_bash_prompt_device_color\]\h\[$sexy_bash_prompt_reset\]\
+\[$sexy_bash_prompt_preposition_color\]:\[$sexy_bash_prompt_reset\] \
+\[$sexy_bash_prompt_dir_color\]\w\[$sexy_bash_prompt_reset\]\
+\$( sexy_bash_prompt_is_on_git && \
+  echo -n \" \[$sexy_bash_prompt_preposition_color\]on\[$sexy_bash_prompt_reset\] \" && \
+  echo -n \"\[$sexy_bash_prompt_git_status_color\]\$(sexy_bash_prompt_get_git_info)\" && \
+  echo -n \"\[$sexy_bash_prompt_git_progress_color\]\$(sexy_bash_prompt_get_git_progress)\" && \
+  echo -n \"\[$sexy_bash_prompt_preposition_color\]\" )\n\[$sexy_bash_prompt_reset\]\
+\[$sexy_bash_prompt_symbol_color\]$sexy_bash_prompt_symbol \[$sexy_bash_prompt_reset\]"
+
+{% endif %}
+
+# vi editing mode
+set -o vi
+
+# fin

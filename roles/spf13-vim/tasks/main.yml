@@ -1,0 +1,19 @@
+---
+- name: Check if spf13-vim-3 exists
+  stat: path=~/.spf13-vim-3/
+  register: spf13_dir
+
+- name: Get spf13-vim install script
+  command: curl http://j.mp/spf13-vim3 -L -o {{ spf13_install_script }}
+  register: spf13_get_result
+  when: not spf13_dir.stat.exists
+
+- debug: var=spf13_get_result
+
+- name: Install spf13
+  command: sh {{ spf13_install_script }}
+  when: not spf13_dir.stat.exists and (spf_get_result.rc == 0)
+
+- name: Template | vimrc_local
+  template: src=vimrc.local.j2 dest="~/.vimrc.local"
+

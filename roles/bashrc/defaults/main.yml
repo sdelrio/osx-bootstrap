@@ -1,0 +1,5 @@
+---
+
+bashrc_tokenfile: "~/.bash_apitokens"
+bashrc_java_environment: true
+bashrc_sexy_bash_prompt: true

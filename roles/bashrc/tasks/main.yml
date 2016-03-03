@@ -1,0 +1,26 @@
+---
+- name: check if bash_prompt exist already
+  stat: path=~/.bash_prompt
+  register: bashrc_bashprompt
+
+- name: Sexy bash prompt repository
+  git: repo=https://github.com/twolfson/sexy-bash-prompt depth=1 dest=/tmp/sexy-bash-prompt
+  when: bashrc_sexy_bash_prompt == true and (not bashrc_bashprompt.stat.exists)
+
+- name: Install sexy-bash-promph
+  command: make install
+  args:
+    chdir: /tmp/sexy-bash-prompt
+  when: bashrc_sexy_bash_prompt == true and (not bashrc_bashprompt.stat.exists)
+  notify:
+    - reload bashrc
+
+- name: Delete temp files if they exist
+  file: path=/tmp/sexy-bash-prompt state=absent
+  when: bashrc_sexy_bash_prompt == true
+
+- name: Generate ~/.bashrc
+  template: src=bashrc.j2 dest="~/.bashrc"
+  notify:
+    - reload bashrc
+

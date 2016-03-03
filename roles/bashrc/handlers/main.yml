@@ -1,0 +1,4 @@
+---
+- name: reload bashrc
+  debug: msg="bashrc changed, make sure to source ~/.bashrc to update current session"
+

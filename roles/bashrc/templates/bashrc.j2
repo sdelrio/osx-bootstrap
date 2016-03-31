@@ -15,7 +15,8 @@ fi
 
 alias ls='ls -GFh'
 alias vi='vim'
-alias myip='curl http://checkip.dyndns.org 2>/dev/null| cut -f 2 -d':' | cut -f 1 -d"<" '
+alias myipdyndns='curl http://checkip.dyndns.org 2>/dev/null| cut -f 2 -d':' | cut -f 1 -d"<" ' | tr -d " "
+alias myip='curl http://ipinfo.io/ip'
 alias nosleep='pmset noidle'
 
 {% if bashrc_java_environment %}

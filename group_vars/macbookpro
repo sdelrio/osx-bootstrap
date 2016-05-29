@@ -17,6 +17,7 @@ homebrew_packages:
   - name: sbt
   - name: awscli
   - name: openvpn
+  - name: mtr
 
 homebrew_cask_packages:
   - vagrant

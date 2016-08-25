@@ -3,3 +3,8 @@
 bashrc_tokenfile: "~/.bash_apitokens"
 bashrc_java_environment: true
 bashrc_sexy_bash_prompt: true
+bashrc_imgcat: true
+bashrc_imgls: true
+
+bashrc_imgcat_url: https://raw.github.com/gnachman/iTerm2/master/tests/imgcat
+bashrc_imgls_url: https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgls

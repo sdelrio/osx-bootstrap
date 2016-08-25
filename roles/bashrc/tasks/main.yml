@@ -7,6 +7,22 @@
   git: repo=https://github.com/twolfson/sexy-bash-prompt depth=1 dest=/tmp/sexy-bash-prompt
   when: bashrc_sexy_bash_prompt == true and (not bashrc_bashprompt.stat.exists)
 
+- name: check if imgcat tool exist already
+  stat: path=/usr/local/bin/imgcat
+  register: bashrc_imgcat_bin
+
+- name: Imgcat tool for iterm2
+  get_url: url="{{bashrc_imgcat_url}}" dest=/usr/local/bin/imgcat mode=0755
+  when: bashrc_imgcat == true and (not bashrc_imgcat_bin.stat.exists)
+
+- name: check if imgls tool exist already
+  stat: path=/usr/local/bin/imgls
+  register: bashrc_imgls_bin
+
+- name: Imgls tool for iterm2
+  get_url: url="{{bashrc_imgls_url}}" dest=/usr/local/bin/imgls mode=0755
+  when: bashrc_imgls == true and (not bashrc_imgls_bin.stat.exists)
+
 - name: Install sexy-bash-promph
   command: make install
   args:

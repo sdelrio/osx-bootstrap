@@ -11,7 +11,11 @@
       tags: brew
     - role: homebrew-cask
       tags: brew
+    - role: pip-packages
+      tags: pip
     - name: bashrc
       tags: bash
     - name: spf13-vim
       tags: spf13
+    - name: s3ql
+      tags: s3ql

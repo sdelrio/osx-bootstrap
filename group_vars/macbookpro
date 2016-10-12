@@ -1,6 +1,6 @@
 ---
 homebrew_packages:
-  - name: brew-cask
+#  - name: homebrew/completions/brew-cask-completion
   - name: nmap
   - name: vim
     install_options: with-lua
@@ -18,6 +18,10 @@ homebrew_packages:
   - name: awscli
   - name: openvpn
   - name: mtr
+  - name: pkg-config
+  - name: sqlite
+  - name: xz
+  - name: python3
 
 homebrew_cask_packages:
   - vagrant
@@ -25,8 +29,26 @@ homebrew_cask_packages:
   - skype
   - the-unarchiver
   - iterm2
+  - osxfuse
 #  - dropbox
 #  - evernote
 #  - google-chrome
 #  - virtualbox
 #  - java
+
+pip_packages:
+#   - pycrypto
+   - pyliblzma
+   - Cython
+   - apsw
+   - llfuse
+
+pip3_packages:
+   - pycrypto
+   - pyliblzma
+   - Cython
+   - apsw
+   - llfuse
+   - dugong
+   - defusedxml
+   - request

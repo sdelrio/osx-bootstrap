@@ -22,6 +22,11 @@ homebrew_packages:
   - name: sqlite
   - name: xz
   - name: python3
+  - name: terraform
+  - name: graphviz
+  - name: packer
+  - name: duplicity
+  - name: jx
 
 homebrew_cask_packages:
   - vagrant

@@ -4,4 +4,5 @@ homebrew_taps:
   - caskroom/versions
   - homebrew/versions
   - homebrew/binary
+  - jenkins-x/jx
 

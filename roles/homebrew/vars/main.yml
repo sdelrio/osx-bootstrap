@@ -5,4 +5,5 @@ homebrew_taps:
   - homebrew/versions
   - homebrew/binary
   - jenkins-x/jx
+  - caskroom/cask/minikube
 

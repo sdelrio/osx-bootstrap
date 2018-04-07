@@ -27,6 +27,7 @@ homebrew_packages:
   - name: packer
   - name: duplicity
   - name: jx
+  - name: minikube
 
 homebrew_cask_packages:
   - vagrant
